@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Best AI App - Dear Adhyapak</title>
+    
+    <!-- AdMob Ads Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7836659036507838"
+     crossorigin="anonymous"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .founder-info {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 15px;
+            display: inline-block;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 5px;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-button {
+            background: transparent;
+            border: none;
+            padding: 15px 30px;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0 5px;
+        }
+
+        .tab-button.active, .tab-button:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+
+        .ai-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+        }
+
+        .ai-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .ai-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .ai-card h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .ai-card p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .visit-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .visit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .social-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        .youtube { background: #FF0000; }
+        .instagram { background: linear-gradient(45deg, #E4405F, #F77737); }
+        .facebook { background: #1877F2; }
+        .telegram { background: #0088CC; }
+        .twitter { background: #000000; }
+        .linkedin { background: #0077B5; }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+
+        .video-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+            cursor: pointer;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-info h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .video-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .search-bar {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1em;
+            outline: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .category-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #667eea;
+        }
+
+        .no-results {
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            grid-column: 1 / -1;
+            padding: 40px;
+        }
+
+        /* Ad Container Styles */
+        .ad-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .ad-banner {
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .ad-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+            .nav-tabs { flex-wrap: wrap; }
+            .tab-button { padding: 10px 20px; margin: 5px; }
+            .ai-grid, .social-grid, .video-grid { grid-template-columns: 1fr; }
+            .ad-banner { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Ad -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-banner">
+                <!-- AdMob Banner Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-7836659036507838"
+                     data-ad-slot="2901611722"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
+        <div class="header">
+            <h1>🌟 World Best AI App 🌟</h1>
+            <p>दुनिया के सबसे बेहतरीन AI Tools का संग्रह</p>
+            <div class="founder-info">
+                👨‍🏫 Founder: Dear Adhyapak
+            </div>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="tab-button active" onclick="showTab('ai-tools')">🤖 AI Tools</button>
+            <button class="tab-button" onclick="showTab('content')">📱 Content</button>
+            <button class="tab-button" onclick="showTab('videos')">🎥 Videos</button>
+        </div>
+
+        <div id="ai-tools" class="tab-content active">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="AI Tool खोजें..." id="searchInput" onkeyup="handleSearch(event)">
+                <button class="search-btn" onclick="searchAI()">🔍</button>
+            </div>
+            
+            <div class="category-filter">
+                <button class="category-btn active" onclick="filterCategory('all')">सभी</button>
+                <button class="category-btn" onclick="filterCategory('conversational')">बातचीत</button>
+                <button class="category-btn" onclick="filterCategory('image')">इमेज</button>
+                <button class="category-btn" onclick="filterCategory('video')">वीडियो</button>
+                <button class="category-btn" onclick="filterCategory('writing')">लेखन</button>
+                <button class="category-btn" onclick="filterCategory('code')">कोडिंग</button>
+                <button class="category-btn" onclick="filterCategory('design')">डिजाइन</button>
+                <button class="category-btn" onclick="filterCategory('audio')">ऑडियो</button>
+            </div>
+            
+            <!-- Middle Ad -->
+            <div class="ad-container">
+                <div class="ad-label">Sponsored</div>
+                <div class="ad-banner">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-format="fluid"
+                         data-ad-layout-key="-gw-3+1f-3d+2z"
+                         data-ad-client="ca-pub-7836659036507838"
+                         data-ad-slot="2901611722"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            
+            <div class="ai-grid" id="aiGrid">
+                <!-- Conversational AI -->
+                <div class="ai-card" data-name="chatgpt" data-category="conversational">
+                    <div class="ai-icon">🧠</div>
+                    <h3>ChatGPT</h3>
+                    <p>OpenAI का powerful conversational AI tool</p>
+                    <a href="https://chat.openai.com" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="claude" data-category="conversational">
+                    <div class="ai-icon">🤖</div>
+                    <h3>Claude AI</h3>
+                    <p>Anthropic का intelligent AI assistant</p>
+                    <a href="https://claude.ai" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="gemini" data-category="conversational">
+                    <div class="ai-icon">💎</div>
+                    <h3>Google Gemini</h3>
+                    <p>Google का advanced AI model</p>
+                    <a href="https://gemini.google.com" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="perplexity" data-category="conversational">
+                    <div class="ai-icon">🔍</div>
+                    <h3>Perplexity AI</h3>
+                    <p>AI-powered search और research tool</p>
+                    <a href="https://perplexity.ai" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="youcom" data-category="conversational">
+                    <div class="ai-icon">🌐</div>
+                    <h3>You.com</h3>
+                    <p>AI search engine और chat assistant</p>
+                    <a href="https://you.com" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <!-- Image Generation -->
+                <div class="ai-card" data-name="midjourney" data-category="image">
+                    <div class="ai-icon">🎨</div>
+                    <h3>Midjourney</h3>
+                    <p>AI-powered image generation tool</p>
+                    <a href="https://midjourney.com" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="dalle" data-category="image">
+                    <div class="ai-icon">🖼️</div>
+                    <h3>DALL-E 3</h3>
+                    <p>OpenAI का image generation model</p>
+                    <a href="https://openai.com/dall-e-3" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="stable-diffusion" data-category="image">
+                    <div class="ai-icon">🌟</div>
+                    <h3>Stable Diffusion</h3>
+                    <p>Open-source image generation AI</p>
+                    <a href="https://stability.ai" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="leonardo" data-category="image">
+                    <div class="ai-icon">🎭</div>
+                    <h3>Leonardo AI</h3>
+                    <p>Professional image generation platform</p>
+                    <a href="https://leonardo.ai" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="firefly" data-category="image">
+                    <div class="ai-icon">🔥</div>
+                    <h3>Adobe Firefly</h3>
+                    <p>Adobe का creative AI suite</p>
+                    <a href="https://firefly.adobe.com" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <!-- Video Generation -->
+                <div class="ai-card" data-name="synthesia" data-category="video">
+                    <div class="ai-icon">🎬</div>
+                    <h3>Synthesia</h3>
+                    <p>AI video generation platform</p>
+                    <a href="https://synthesia.io" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="runway" data-category="video">
+                    <div class="ai-icon">🎥</div>
+                    <h3>RunwayML</h3>
+                    <p>Creative AI tools for content creation</p>
+                    <a href="https://runwayml.com" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="pika" data-category="video">
+                    <div class="ai-icon">⚡</div>
+                    <h3>Pika Labs</h3>
+                    <p>AI video generation से text</p>
+                    <a href="https://pika.art" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="heygen" data-category="video">
+                    <div class="ai-icon">👤</div>
+                    <h3>HeyGen</h3>
+                    <p>AI avatar और video creation</p>
+                    <a href="https://heygen.com" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="invideo" data-category="video">
+                    <div class="ai-icon">📹</div>
+                    <h3>InVideo AI</h3>
+                    <p>AI-powered video editing tool</p>
+                    <a href="https://invideo.io" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <!-- Writing & Content -->
+                <div class="ai-card" data-name="jasper" data-category="writing">
+                    <div class="ai-icon">📝</div>
+                    <h3>Jasper AI</h3>
+                    <p>AI content writing assistant</p>
+                    <a href="https://jasper.ai" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="copy" data-category="writing">
+                    <div class="ai-icon">✍️</div>
+                    <h3>Copy.ai</h3>
+                    <p>AI copywriting और content creation</p>
+                    <a href="https://copy.ai" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="writesonic" data-category="writing">
+                    <div class="ai-icon">🚀</div>
+                    <h3>Writesonic</h3>
+                    <p>AI writing और SEO content tool</p>
+                    <a href="https://writesonic.com" target="_blank" class="visit-btn">Visit Website</a>
+                </div>
+
+                <div class="ai-card" data-name="grammarly" data-category="writing">
+                    <div class="ai-icon">📖</div>
+                    <h3>Grammarly</h3>
+                    <p>AI-powered writing assistant</p>
+                    <a href="https://grammarly.com" target="_blank" class="visit-btn">Visit Webs
